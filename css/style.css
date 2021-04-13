@@ -9,22 +9,37 @@
     /* --fuente-principal: 3.8rem; */
 }
 
+/* apply a natural box layout model to all elements, but allowing components to change */
 /* comienzo de hack rems*/
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
+}*, *:before, *:after {
+    box-sizing: inherit;
 }
+
+
 body{
     font-size: 16px;    /* 1rem = 10px */
     font-family: 'Krub', sans-serif; /*aplica a todos los elementos de nuestro sitio*/
 }
 /* fin de hack para rems */
 
-
-/* CLASES PARA EL HEADER */
-.titulo{
-    text-align: center;
+/* defino unas reglas para la tipografia */
+h1{
     font-size: 3.8rem;
 }
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+/* CLASES PARA EL HEADER */
 
 .titulo span{
     font-size: 2rem;
@@ -76,6 +91,42 @@ body{
 .navegacion-principal a:hover {
     background-color: var(--primario);
     color: var(--oscuro);
+}
+
+/*CLASE PARA EL HERO (fondo de pantalla para la seccion)*/
+/* PADRE (REALATIVE)*/
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    /*ACA ESTA PRESENTE EL MODELO CAJA POR ESO EL PADING AUMENTA EL TAMAÑO DE LA IMAGEN 
+    LA SOLUCION ES EL SNIPPET DE PAUL IRISH
+    */
+}
+/* HIJO (ABSOLUTE)*/
+.contenido-hero{
+    position: absolute;
+    background-color:rgba(0, 0, 0, .7);/*anterior sintaxis*/
+    background-color: rgb(0 0 0 / 70%);/*nueva sintaxis tiene menos soporte por parte de los navegadores*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* ALINEACION DE CONTENIDO DEL HERO */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*haciendo el uso del enfoque de css de modulos*/
+.contenido-hero h2 ,.contenido-hero p{
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: center;
 }
 
 /*UTILIDADES*/
