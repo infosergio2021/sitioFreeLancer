@@ -25,6 +25,7 @@ body{
 }
 /* fin de hack para rems */
 
+/* GLOBALES */
 /* defino unas reglas para la tipografia */
 h1{
     font-size: 3.8rem;
@@ -39,8 +40,19 @@ h1,h2,h3{
     text-align: center;
 }
 
-/* CLASES PARA EL HEADER */
+/*utilidad para crear sombras en los border*/
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    -moz-box-shadow:  0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 1rem;
+}
 
+
+
+/* CLASES PARA EL HEADER */
 .titulo span{
     font-size: 2rem;
 
@@ -104,6 +116,7 @@ h1,h2,h3{
     /*ACA ESTA PRESENTE EL MODELO CAJA POR ESO EL PADING AUMENTA EL TAMAÑO DE LA IMAGEN 
     LA SOLUCION ES EL SNIPPET DE PAUL IRISH
     */
+    margin-bottom: 2rem;
 }
 /* HIJO (ABSOLUTE)*/
 .contenido-hero{
@@ -120,14 +133,82 @@ h1,h2,h3{
 }
 
 /*haciendo el uso del enfoque de css de modulos*/
-.contenido-hero h2 ,.contenido-hero p{
+.contenido-hero h2 ,
+.contenido-hero p{
     color: var(--blanco);
 }
 
-.ubicacion{
+.contenido-hero .ubicacion{
     display: flex;
     align-items: center;
 }
+
+/*CLASES PARA ORDENAR LOS SERVICIOS*/
+
+@media (min-width: 768px){
+    .servicios{
+        display: grid;/*habilito el sistema de columnas entonces debo asignar dimensiones para columnas*/
+        /* asigno una dimension para 3 columnas  */
+        grid-template-columns: repeat(3, 1fr);/*1fr = 33.3% */
+        column-gap: 1rem;
+    }    
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Flexbox para alineacion o distribucion de elementos que estaran dentro de contenedores EJ: una barra de navegacion */
+/*css grid para el layout del sitio EJ: columnas o contenedores de elementos (para distribuir diferentes areas)*/
+
+
+
+/*BOTONES REUTILIZABLES*/
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;/*le da 5px para obtener bordes suaves*/
+    width: 90%; /*que solo ocupe el 90% de ancho de la pantalla*/
+    text-align: center;
+}
+
+/* que el boton sea pequeño cuando la pantalla supera los 768px */
+@media (min-width: 768px){
+    .boton{
+        width: auto;
+    }
+}
+
+
+
 
 /*UTILIDADES*/
 
