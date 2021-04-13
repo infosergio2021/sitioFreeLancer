@@ -109,41 +109,44 @@
         </div>
         <!-- .servicios -->
 
-
-    </main>
-
     <section>
         <h2>Contacto</h2>
-        <form>
+        
+        <form class="formulario">
             <fieldset>
                 <legend>Contactame llenando todos los campos</legend>
 
-                <div>
-                    <label >Nombre</label>
-                    <input type="text" placeholder="Tu Nombre">
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label >Nombre</label>
+                        <input class="input-text" type="text" placeholder="Tu Nombre">
+                    </div>
+                    
+                    <div class="campo">
+                        <label >Telefono</label>
+                        <input class="input-text" type="tel" placeholder="Tu telefono">
+                    </div>
+                    
+                    <div class="campo">
+                        <label >Correo</label>
+                        <input class="input-text" type="email" placeholder="ejemplo@gmail.com">
+                    </div>
+                    
+                    <div class="campo">
+                        <label>Mensaje</label>
+                        <textarea class="input-text"></textarea>
+                    </div>
+    
                 </div>
-                
-                <div>
-                    <label >Telefono</label>
-                    <input type="tel" placeholder="Tu telefono">
+                <!-- este es el contenedor de los campos -->
+                <div class="alinear-derecha flex">
+                    <input class="boton w-md-100" type="submit" value="Enviar">
                 </div>
-                
-                <div>
-                    <label >Correo</label>
-                    <input type="email" placeholder="ejemplo@gmail.com">
-                </div>
-                
-                <div>
-                    <label >Mensaje</label>
-                    <textarea></textarea>
-                </div>
-
-                <input type="submit" value="Enviar">
-
             </fieldset>
         </form>
     </section>
-    
+
+</main>
 
     <footer>
         <p>Todos los derechos reservados &copy; 2021 . Sergio Aguilar </p>

@@ -14,8 +14,15 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y proximity;
 }*, *:before, *:after {
     box-sizing: inherit;
+}
+
+/*Scroll snap*/
+.servicios,.navegacion-principal,.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 
@@ -143,8 +150,9 @@ h1,h2,h3{
     align-items: center;
 }
 
-/*CLASES PARA ORDENAR LOS SERVICIOS*/
 
+
+/*CLASES PARA ORDENAR LOS SERVICIOS*/
 @media (min-width: 768px){
     .servicios{
         display: grid;/*habilito el sistema de columnas entonces debo asignar dimensiones para columnas*/
@@ -179,11 +187,55 @@ h1,h2,h3{
     justify-content: space-evenly;
     align-items: center;
 }
-
+/*CUANDO USAR UNO U OTRO*/
 /* Flexbox para alineacion o distribucion de elementos que estaran dentro de contenedores EJ: una barra de navegacion */
 /*css grid para el layout del sitio EJ: columnas o contenedores de elementos (para distribuir diferentes areas)*/
 
 
+/*CLASES PARA CONTACTO (FORMULARIO)*/
+
+.formulario{
+    background-color: var(--gris);
+    width: min( 60rem,100% );/*utilizar el valor más pequeño para asignar el ancho esto es util para ahorrar media queries*/
+    /*si el padre no tiene un display flex puedo colocar un margin 0 auto para centrar el contenido*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border:none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+/*Clases para los campos del formulario*/
+.contenedor-campos{
+
+}
+.campo{
+    margin-bottom: 1.5rem;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
 
 /*BOTONES REUTILIZABLES*/
 .boton{
@@ -198,6 +250,11 @@ h1,h2,h3{
     border-radius: .5rem;/*le da 5px para obtener bordes suaves*/
     width: 90%; /*que solo ocupe el 90% de ancho de la pantalla*/
     text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
 }
 
 /* que el boton sea pequeño cuando la pantalla supera los 768px */
@@ -211,6 +268,24 @@ h1,h2,h3{
 
 
 /*UTILIDADES*/
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.flex{
+    display: flex;
+}
+
+.w-md-100{
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .w-md-100{
+        width: auto;
+    }
+}
 
 .contenedor{
     max-width: 120rem;/*con esto solo toma el valor definido si esta disponible sino tomara el 100% que es el maximo por default*/
