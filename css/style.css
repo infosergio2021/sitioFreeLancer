@@ -50,6 +50,9 @@ body{
 /* CLASES PARA LA NAVEGACION*/
 .navegacion-principal{
     padding: 1rem;
+    display: flex;/*por default viene como flexdirection row*/
+    /* ahora que hibilite display flex puedo usar las propiedades de flexbox*/
+    justify-content: space-between;/*ordena los elementos hijos horizontalmente en este caso los separa entre ellos*/
 }
 
 .navegacion-principal a {
