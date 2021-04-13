@@ -1,4 +1,50 @@
-h1 {
-    text-align: center;
-    color: red;
+/* custom properties (variables de CSS)*/
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0087A7;
+    --gris: #757575;
+
+    /* --fuente-principal: 3.8rem; */
 }
+
+/* comienzo de hack rems*/
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;    /* 1rem = 10px */
+    font-family: 'Krub', sans-serif; /*aplica a todos los elementos de nuestro sitio*/
+}
+/* fin de hack para rems */
+
+
+/* CLASES PARA EL HEADER */
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.titulo span{
+    font-size: 2rem;
+
+}
+
+/* NOTA: la especifidad es como el navegador va a mostrar 
+    el estilo segun su nivel de especificidad 
+    ENTONCES NO IMPORTA EL ORDEN CSS VA A DECIDIR CUAL ES MAS ESPECIFICO Y LO VA A APLICAR
+    EJ
+
+        h1.titulo span
+        .titulo span
+        span
+    
+    ACA CSS VA A DECIDIR APLICAR LA PRIMERA OPCION POR QUE ES MAS ESPECIFICO
+    SI BIEN LOS 3 SEÑALAN AL MISMO ELMENTO SOLO EL PRIMERO LO INDICA DE MANERA MAS ESPECIFICA
+    Y POR LO TANTO APLICARA LOS ATRIBUTOS QUE ELLA POSEA POR SOBRE LOS DEMAS
+    SALVO QUE UN ATRIBUTO LLEVE CON SIGO !important EN ESE CASO PREDOMINA EL QUE ATRIBUTO QUE TIENE EL important!
+
+    */
+
+/* CLASES PARA  */
