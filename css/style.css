@@ -47,4 +47,23 @@ body{
 
     */
 
-/* CLASES PARA  */
+/* CLASES PARA LA NAVEGACION*/
+.navegacion-principal{
+    padding: 1rem;
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+/*UTILIDADES*/
+
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
