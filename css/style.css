@@ -1,68 +1,71 @@
 /* custom properties (variables de CSS)*/
-:root{
-    --blanco: #ffffff;
-    --oscuro: #212121;
-    --primario: #ffc107;
-    --secundario: #0087A7;
-    --gris: #757575;
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0087a7;
+  --gris: #757575;
 
-    /* --fuente-principal: 3.8rem; */
+  /* --fuente-principal: 3.8rem; */
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 /* comienzo de hack rems*/
-html{
-    font-size: 62.5%;
-    box-sizing: border-box;
-    scroll-snap-type: y proximity;
-}*, *:before, *:after {
-    box-sizing: inherit;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y proximity;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /*Scroll snap*/
-.servicios,.navegacion-principal,.formulario{
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+.servicios,
+.navegacion-principal,
+.formulario {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
-
-body{
-    font-size: 16px;    /* 1rem = 10px */
-    font-family: 'Krub', sans-serif; /*aplica a todos los elementos de nuestro sitio*/
+body {
+  font-size: 16px; /* 1rem = 10px */
+  font-family: "Krub", sans-serif; /*aplica a todos los elementos de nuestro sitio*/
 }
 /* fin de hack para rems */
 
 /* GLOBALES */
 /* defino unas reglas para la tipografia */
-h1{
-    font-size: 3.8rem;
+h1 {
+  font-size: 3.8rem;
 }
-h2{
-    font-size: 2.8rem;
+h2 {
+  font-size: 2.8rem;
 }
-h3{
-    font-size: 1.8rem;
+h3 {
+  font-size: 1.8rem;
 }
-h1,h2,h3{
-    text-align: center;
+h1,
+h2,
+h3 {
+  text-align: center;
 }
 
 /*utilidad para crear sombras en los border*/
-.sombra{
-    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
-    -moz-box-shadow:  0px 5px 15px 0px rgba(112, 112, 112, 0.48);
-    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
-    background-color: var(--blanco);
-    border-radius: 1rem;
-    padding: 1rem;
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+  box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
-
-
 /* CLASES PARA EL HEADER */
-.titulo span{
-    font-size: 2rem;
-
+.titulo span {
+  font-size: 2rem;
 }
 
 /* NOTA: la especifidad es como el navegador va a mostrar 
@@ -82,248 +85,307 @@ h1,h2,h3{
     */
 
 /* CLASES PARA LA NAVEGACION*/
-.navegacion-principal{
-    display: flex;/*por default viene como flexdirection row*/
-    /* ahora que hibilite display flex puedo usar las propiedades de flexbox*/
-    flex-direction: column;/*cuando la pantalla es pequeña que esten ordenados por fila*/
+.navegacion-principal {
+  display: flex; /*por default viene como flexdirection row*/
+  /* ahora que hibilite display flex puedo usar las propiedades de flexbox*/
+  flex-direction: column; /*cuando la pantalla es pequeña que esten ordenados por fila*/
 }
 
 /* quiero que desde una tablet a un tamaño mas grande(cuando sea mayor a 480px) */
-@media (min-width: 480px){
-    .navegacion-principal{
-        flex-direction: row;
-        justify-content: space-between;/*ordena los elementos hijos horizontalmente en este caso los separa entre ellos*/
-    }
+@media (min-width: 480px) {
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between; /*ordena los elementos hijos horizontalmente en este caso los separa entre ellos*/
+  }
 }
 
 .navegacion-principal a {
-    display: block;/*que el enlace ocupe todo el ancho de la fila*/
-    text-align: center;/*que el texto este centrado en el espacio disponible*/
+  display: block; /*que el enlace ocupe todo el ancho de la fila*/
+  text-align: center; /*que el texto este centrado en el espacio disponible*/
 
-    color: var(--blanco);
-    text-decoration: none;
-    font-size: 2rem;
-    font-size: 700;
-    padding: 1rem;/*este pading le da espacio hacia adentro pero ademas ensancha un poco la barra del nav*/
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-size: 700;
+  padding: 1rem; /*este pading le da espacio hacia adentro pero ademas ensancha un poco la barra del nav*/
 }
 
 .navegacion-principal a:hover {
-    background-color: var(--primario);
-    color: var(--oscuro);
+  background-color: var(--primario);
+  color: var(--oscuro);
 }
 
 /*CLASE PARA EL HERO (fondo de pantalla para la seccion)*/
 /* PADRE (REALATIVE)*/
-.hero{
-    background-image: url(../img/hero.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 450px;
-    position: relative;
-    /*ACA ESTA PRESENTE EL MODELO CAJA POR ESO EL PADING AUMENTA EL TAMAÑO DE LA IMAGEN 
+.hero {
+  background-image: image-set(
+    url("../img/hero-1280.webp") type("image/webp"),
+    url("../img/hero-1280.jpg") type("image/jpeg")
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45rem;
+  position: relative;
+  /*ACA ESTA PRESENTE EL MODELO CAJA POR ESO EL PADING AUMENTA EL TAMAÑO DE LA IMAGEN 
     LA SOLUCION ES EL SNIPPET DE PAUL IRISH
     */
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
+
+/* Móviles (<=768px): usar hero-640 */
+@media (max-width: 768px) {
+  .hero {
+    background-image: image-set(
+      url("../img/hero-640.webp") type("image/webp"),
+      url("../img/hero-640.jpg") type("image/jpeg")
+    );
+  }
+}
+
+/* Pantallas grandes (>=1600px): usar hero-1920 */
+@media (min-width: 1600px) {
+  .hero {
+    background-image: image-set(
+      url("../img/hero-1920.webp") type("image/webp"),
+      url("../img/hero-1920.jpg") type("image/jpeg")
+    );
+  }
+}
+
 /* HIJO (ABSOLUTE)*/
-.contenido-hero{
-    position: absolute;
-    background-color:rgba(0, 0, 0, .7);/*anterior sintaxis*/
-    background-color: rgb(0 0 0 / 70%);/*nueva sintaxis tiene menos soporte por parte de los navegadores*/
-    width: 100%;
-    height: 100%;
-    display: flex;
-    /* ALINEACION DE CONTENIDO DEL HERO */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7); /*anterior sintaxis*/
+  background-color: rgb(
+    0 0 0 / 70%
+  ); /*nueva sintaxis tiene menos soporte por parte de los navegadores*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* ALINEACION DE CONTENIDO DEL HERO */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /*haciendo el uso del enfoque de css de modulos*/
-.contenido-hero h2 ,
-.contenido-hero p{
-    color: var(--blanco);
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
 }
 
-.contenido-hero .ubicacion{
-    display: flex;
-    align-items: center;
+.contenido-hero .ubicacion {
+  display: flex;
+  align-items: center;
 }
-
-
 
 /*CLASES PARA ORDENAR LOS SERVICIOS*/
-@media (min-width: 768px){
-    .servicios{
-        display: grid;/*habilito el sistema de columnas entonces debo asignar dimensiones para columnas*/
-        /* asigno una dimension para 3 columnas  */
-        grid-template-columns: repeat(3, 1fr);/*1fr = 33.3% */
-        column-gap: 1rem;
-    }    
+@media (min-width: 768px) {
+  .servicios {
+    display: grid; /*habilito el sistema de columnas entonces debo asignar dimensiones para columnas*/
+    /* asigno una dimension para 3 columnas  */
+    grid-template-columns: repeat(3, 1fr); /*1fr = 33.3% */
+    column-gap: 1rem;
+  }
 }
 
-.servicio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.servicio h3{
-    color: var(--secundario);
-    font-weight: normal;
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
 }
 
-.servicio p{
-    line-height: 2;
-    text-align: center;
+.servicio p {
+  line-height: 2;
+  text-align: center;
 }
 
-.servicio .iconos{
-    height: 15rem;
-    width: 15rem;
-    background-color: var(--primario);
-    border-radius: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 /*CUANDO USAR UNO U OTRO*/
 /* Flexbox para alineacion o distribucion de elementos que estaran dentro de contenedores EJ: una barra de navegacion */
 /*css grid para el layout del sitio EJ: columnas o contenedores de elementos (para distribuir diferentes areas)*/
 
-
 /*CLASES PARA CONTACTO (FORMULARIO)*/
 
-.formulario{
-    background-color: var(--gris);
-    width: min( 60rem,100% );/*utilizar el valor más pequeño para asignar el ancho esto es util para ahorrar media queries*/
-    /*si el padre no tiene un display flex puedo colocar un margin 0 auto para centrar el contenido*/
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 1rem;
+.formulario {
+  background-color: var(--gris);
+  width: min(
+    60rem,
+    100%
+  ); /*utilizar el valor más pequeño para asignar el ancho esto es util para ahorrar media queries*/
+  /*si el padre no tiene un display flex puedo colocar un margin 0 auto para centrar el contenido*/
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-.formulario fieldset{
-    border:none;
+.formulario fieldset {
+  border: none;
 }
 
-.formulario legend{
-    text-align: center;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--primario);
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primario);
 }
 
 /*Clases para los campos del formulario*/
-@media (min-width: 768px){
-    .contenedor-campos{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: auto auto 20rem;
-        column-gap: 1rem;
-    }
-    
-    .campo:nth-child(3){
-        grid-column: 1 / 3;
-    }
-    .campo:nth-child(4){
-        grid-column: 1 / 3;
-    }
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+  }
+
+  .campo:nth-child(3) {
+    grid-column: 1 / 3;
+  }
+  .campo:nth-child(4) {
+    grid-column: 1 / 3;
+  }
 }
 
-.campo{
-    margin-bottom: 1.5rem;
+.campo {
+  margin-bottom: 1.5rem;
 }
-.campo label{
-    color: var(--blanco);
-    font-weight: bold;
-    display: block;
-    margin-bottom: .5rem;
-}
-
-.campo textarea{
-    height: 20rem;
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.input-text{
-    width: 100%;
-    border: none;
-    padding: 1.5rem;
-    border-radius: .5rem;
+.campo textarea {
+  height: 20rem;
 }
 
-.footer{
-    text-align: center;
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
 }
 
+.footer {
+  text-align: center;
+}
 
 /*BOTONES REUTILIZABLES*/
-.boton{
-    background-color: var(--secundario);
-    color: var(--blanco);
-    padding: 1rem 3rem;
-    margin-top: 1rem;
-    font-size: 2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: .5rem;/*le da 5px para obtener bordes suaves*/
-    width: 90%; /*que solo ocupe el 90% de ancho de la pantalla*/
-    text-align: center;
-    border: none;
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.5rem; /*le da 5px para obtener bordes suaves*/
+  width: 90%; /*que solo ocupe el 90% de ancho de la pantalla*/
+  text-align: center;
+  border: none;
 }
 
-.boton:hover{
-    cursor: pointer;
+.boton:hover {
+  cursor: pointer;
 }
 
 /* que el boton sea pequeño cuando la pantalla supera los 768px */
-@media (min-width: 768px){
-    .boton{
-        width: auto;
-    }
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
 }
-
-
-
 
 /*UTILIDADES*/
 
-.alinear-derecha{
-    justify-content: flex-end;
+.alinear-derecha {
+  justify-content: flex-end;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
-.w-md-100{
-    width: 100%;
+.w-md-100 {
+  width: 100%;
 }
 
-@media (min-width: 768px){
-    .w-md-100{
-        width: auto;
-    }
+@media (min-width: 768px) {
+  .w-md-100 {
+    width: auto;
+  }
 }
 
-.contenedor{
-    max-width: 120rem;/*con esto solo toma el valor definido si esta disponible sino tomara el 100% que es el maximo por default*/
-    margin: 0 auto;
+.contenedor {
+  max-width: 120rem; /*con esto solo toma el valor definido si esta disponible sino tomara el 100% que es el maximo por default*/
+  margin: 0 auto;
 }
 
-.nav-bg{
-    background-color: var(--secundario);
+.nav-bg {
+  background-color: var(--secundario);
 }
 
+/* Accesibilidad: foco visible */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--primario);
+  outline-offset: 2px;
+}
 
+/* Botones coherentes */
+button.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+}
+button.boton:hover {
+  cursor: pointer;
+}
 
-/* @media (min-width:480px) {
-    /*el siguiente codigo se va a ejecutar si la pantalla supera los 480px*/
-    /*todo lo que se escriba entre esta llaves es el codigo css a utilizar*/
-    /* body{
-        background-color: red;
-    } */
-/* }*/
+/* Reduce animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Baja especificidad para helpers reutilizables */
+:root {
+  --content-max: 1200px;
+}
+.contenedor {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: 1.6rem;
+}
+.text-center {
+  text-align: center;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
