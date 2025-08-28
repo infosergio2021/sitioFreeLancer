@@ -1,0 +1,17 @@
+{
+  "name": "sitio-freelancer",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . -l 5173",
+    "css:build": "npx postcss-cli css/style.css -o css/style.min.css",
+    "img:hero": "npx sharp img/hero.jpg resize 640 --output img/hero-640.jpg && npx sharp img/hero.jpg resize 1280 --output img/hero-1280.jpg && npx sharp img/hero.jpg resize 1920 --output img/hero-1920.jpg && npx sharp img/hero.jpg resize 640 --webp --output img/hero-640.webp && npx sharp img/hero.jpg resize 1280 --webp --output img/hero-1280.webp && npx sharp img/hero.jpg resize 1920 --webp --output img/hero-1920.webp",
+    "build": "npm run css:build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.47",
+    "serve": "^14.2.3",
+    "sharp-cli": "^2.1.0"
+  }
+}
