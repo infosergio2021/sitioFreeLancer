@@ -1,8 +1,5 @@
-# Desarrollo – HU-FREE-001  
+# Desarrollo
 **Título:** Formulario de Contacto Accesible con Confirmación  
-
-ID: HU-FREE-001  
-Estado: Sin empezar  
 
 ## **Descripción**
 

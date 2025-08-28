@@ -1,7 +1,5 @@
 # Historia de Usuario
 
-ID: HU-FREE-001  
-Estado: Sin empezar  
 Título: HU – Formulario de Contacto Accesible con Confirmación
 
 ## Objetivo

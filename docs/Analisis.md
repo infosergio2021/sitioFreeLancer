@@ -1,8 +1,5 @@
-# Análisis Técnico – HU-FREE-001  
+# Análisis Técnico
 **Título:** Formulario de Contacto Accesible con Confirmación  
-
-ID: HU-FREE-001  
-Estado: Sin empezar  
 
 ## **Propósito**
 

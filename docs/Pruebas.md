@@ -1,4 +1,4 @@
-# Pruebas – HU-FREE-001  
+# Pruebas
 **Título:** Formulario de Contacto Accesible con Confirmación  
 
 ## Información General
